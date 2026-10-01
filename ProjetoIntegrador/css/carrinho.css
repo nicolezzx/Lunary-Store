@@ -1,0 +1,1173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Libre Baskerville', serif;
+}
+
+body {
+    background: #fff2df;
+    color: #222;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff2df;
+}
+
+.logo img {
+    width: 120px;
+    display: block;
+}
+
+.search-box {
+    width: 45%;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 45px 14px 20px;
+    border-radius: 10px;
+    border: 1px solid #c97845;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-box i {
+    position: absolute;
+    right: 18px;
+    top: 15px;
+    color: #8b1111;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.icons a {
+    color: #8b1111;
+    font-size: 22px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.icons a:hover {
+    color: #c97845;
+}
+
+.icone-carrinho {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #8b1111;
+}
+
+.icone-carrinho #contadorCarrinho {
+    position: absolute;
+
+    top: -10px;
+    right: -12px;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: #8b1111;
+    color: white;
+
+    border-radius: 50%;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+#contadorCarrinho {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: #8b1111;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* MENU */
+
+nav {
+    background: #c97845;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #fff2df;
+}
+
+/* CARRINHO */
+
+.carrinho {
+    padding: 70px 3%;
+}
+
+.carrinho h2 {
+    text-align: center;
+    font-size: 42px;
+    color: #8b1111;
+    margin-bottom: 50px;
+}
+
+.carrinho-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* LISTA DE PRODUTOS */
+
+.lista-produtos {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.item:first-child {
+    padding-top: 0;
+}
+
+.item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.item-info {
+    flex: 1;
+    margin-left: 0;
+}
+
+.item-info h3 {
+    color: #8b1111;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.item-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+.remover {
+    background: #8b1111;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+}
+
+.remover:hover {
+    background: #a51b1b;
+}
+
+/* RESUMO DA COMPRA */
+
+.resumo {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    height: fit-content;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.resumo h3 {
+    color: #8b1111;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.total {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #111;
+}
+
+.btn-finalizar {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    background: #c97845;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.btn-finalizar:hover {
+    background: #a85f35;
+}
+
+.continuar {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #8b1111;
+    font-size: 15px;
+}
+
+.continuar:hover {
+    text-decoration: underline;
+}
+
+/* MENSAGEM DE PRODUTO ADICIONADO */
+
+.toast {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: #fff;
+    color: #8b1111;
+    padding: 18px 22px;
+    border-left: 6px solid #c97845;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: 0.4s;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.toast i {
+    color: #c97845;
+    font-size: 22px;
+}
+
+.toast.mostrar {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* CARRINHO VAZIO */
+
+.carrinho-vazio {
+    text-align: center;
+    color: #777;
+    padding: 40px 10px;
+    font-size: 17px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .search-box {
+        width: 60%;
+    }
+
+    .carrinho-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    header {
+        justify-content: center;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .search-box {
+        width: 100%;
+        order: 3;
+    }
+
+    .icons {
+        gap: 18px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        padding: 15px 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .carrinho {
+        padding: 40px 15px;
+    }
+
+    .carrinho h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .lista-produtos,
+    .resumo {
+        padding: 20px;
+    }
+
+    .item {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .item img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .item-info {
+        min-width: 150px;
+    }
+
+    .remover {
+        margin-left: auto;
+    }
+
+    .toast {
+        left: 15px;
+        right: 15px;
+        top: 20px;
+        font-size: 13px;
+    }
+
+}
+
+/* =========================
+   FORMAS DE PAGAMENTO
+========================= */
+
+.pagamento {
+    margin-top: 30px;
+}
+
+.pagamento h3 {
+    margin-bottom: 18px;
+    color: #8b1111;
+    font-size: 20px;
+}
+
+
+/* OPÇÕES */
+
+.opcoes-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.opcao-pagamento {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px;
+
+    border: 1px solid #ead8c5;
+    border-radius: 14px;
+
+    background: #fffaf4;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.opcao-pagamento:hover {
+    border-color: #c97845;
+    transform: translateY(-2px);
+}
+
+
+/* RADIO */
+
+.opcao-pagamento input {
+    position: absolute;
+    opacity: 0;
+}
+
+
+/* QUANDO SELECIONADO */
+
+.opcao-pagamento:has(input:checked) {
+    border-color: #8b1111;
+    background: #fff2df;
+
+    box-shadow: 0 4px 12px rgba(139, 17, 17, 0.08);
+}
+
+
+/* ÍCONE */
+
+.icone-pagamento {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+.icone-pagamento.pix {
+    background: #e9f7ef;
+    color: #287a3d;
+}
+
+.icone-pagamento.cartao {
+    background: #f9e8dc;
+    color: #8b1111;
+}
+
+.icone-pagamento.boleto {
+    background: #f5eee6;
+    color: #7a5a42;
+}
+
+
+/* TEXTO */
+
+.info-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    flex: 1;
+}
+
+.info-pagamento strong {
+    font-size: 14px;
+    color: #332724;
+}
+
+.info-pagamento span {
+    font-size: 11px;
+    color: #777;
+}
+
+
+/* CHECK */
+
+.check-pagamento {
+    color: #8b1111;
+
+    font-size: 15px;
+
+    opacity: 0;
+
+    transition: .2s;
+}
+
+.opcao-pagamento:has(input:checked) .check-pagamento {
+    opacity: 1;
+}
+
+
+/* =========================
+   DADOS DO CARTÃO
+========================= */
+
+.dados-cartao {
+    display: none;
+
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    padding: 18px;
+
+    background: #fffaf4;
+
+    border: 1px solid #ead8c5;
+
+    border-radius: 14px;
+}
+
+
+/* CABEÇALHO DO CARTÃO */
+
+.titulo-cartao {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.titulo-cartao>i {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #f5dfd0;
+    color: #8b1111;
+
+    font-size: 14px;
+}
+
+.titulo-cartao div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.titulo-cartao strong {
+    color: #8b1111;
+    font-size: 13px;
+}
+
+.titulo-cartao span {
+    color: #777;
+    font-size: 10px;
+}
+
+
+/* CAMPOS */
+
+.dados-cartao input {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #decfc0;
+
+    border-radius: 9px;
+
+    background: white;
+
+    outline: none;
+
+    font-family: 'Libre Baskerville', serif;
+    font-size: 12px;
+
+    transition: .2s;
+}
+
+.dados-cartao input:focus {
+    border-color: #c97845;
+
+    box-shadow: 0 0 0 3px rgba(201, 120, 69, 0.1);
+}
+
+
+/* VALIDADE + CVV */
+
+.cartao-linha {
+    display: flex;
+    gap: 10px;
+}
+
+.cartao-linha input {
+    width: 50%;
+}
+
+
+/* =========================
+   RESULTADO DO PAGAMENTO
+========================= */
+
+.resultado-pagamento {
+    margin-top: 15px;
+}
+
+.pagamento-box {
+    background: #fffaf4;
+
+    border: 1px solid #e1b58e;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.pagamento-box h4 {
+    color: #8b1111;
+
+    font-size: 17px;
+
+    margin-bottom: 10px;
+}
+
+.pagamento-box p {
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+}
+
+.qr-code {
+    width: 160px;
+    height: 160px;
+
+    display: block;
+
+    margin: 15px auto;
+}
+
+.pix-copia {
+    color: #8b1111;
+
+    font-weight: bold;
+}
+
+.pagamento-box input {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    margin-bottom: 10px;
+}
+
+.btn-copiar {
+    border: none;
+
+    background: #8b1111;
+
+    color: white;
+
+    padding: 11px 15px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-family: 'Libre Baskerville', serif;
+}
+
+.btn-copiar:hover {
+    background: #a51b1b;
+}
+
+.mensagem-sucesso {
+    color: #287a3d;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+.mensagem-erro {
+    background: #ffe4e4;
+
+    color: #a00000;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+#btnTopo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #c26e00;
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+    z-index: 1000;
+
+    transition: 0.3s;
+}
+
+#btnTopo:hover {
+    transform: translateY(-3px);
+}
+
+.icone-carrinho {
+    position: relative;
+}
+
+.icone-carrinho #contadorCarrinho {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+
+    background: #8b1111;
+    color: white;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.usuario span {
+    font-size: 15px;
+    font-weight: bold;
+    color: #8b1111;
+}
+
+/* =========================
+   CUPOM DE DESCONTO
+========================= */
+
+.area-cupom {
+    margin: 25px 0;
+
+    padding: 18px;
+
+    background: #fffaf4;
+
+    border: 1px solid #ead8c5;
+
+    border-radius: 14px;
+}
+
+
+/* TÍTULO DO CUPOM */
+
+.titulo-cupom {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+.icone-cupom {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5dfd0;
+
+    color: #8b1111;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+
+.titulo-cupom div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.titulo-cupom strong {
+    color: #8b1111;
+
+    font-size: 14px;
+}
+
+.titulo-cupom span {
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+/* CAMPO + BOTÃO */
+
+.cupom-input {
+    display: flex;
+
+    gap: 8px;
+}
+
+.cupom-input input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px 13px;
+
+    border: 1px solid #decfc0;
+
+    border-radius: 9px;
+
+    background: white;
+
+    outline: none;
+
+    font-family: 'Libre Baskerville', serif;
+
+    font-size: 11px;
+
+    transition: .2s;
+}
+
+.cupom-input input:focus {
+    border-color: #c97845;
+
+    box-shadow: 0 0 0 3px rgba(201, 120, 69, 0.1);
+}
+
+
+/* BOTÃO APLICAR */
+
+.cupom-input button {
+    padding: 0 17px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #8b1111;
+
+    color: white;
+
+    font-family: 'Libre Baskerville', serif;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.cupom-input button:hover {
+    background: #6f0d0d;
+
+    transform: translateY(-1px);
+}
+
+
+/* MENSAGEM */
+
+#mensagemCupom {
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* SUCESSO */
+
+.sucesso-cupom {
+    color: #287a3d;
+
+    font-weight: bold;
+}
+
+
+/* ERRO */
+
+.erro-cupom {
+    color: #a00000;
+
+    font-weight: bold;
+}
+
+/* ===============================
+PAGAMENTO GERADO
+=============================== */
+
+.pagamento-extra {
+margin-top: 15px;
+}
+
+/* BOTÃO GERAR PAGAMENTO */
+
+.btn-gerar-pagamento {
+width: 100%;
+padding: 14px 15px;
+
+border: none;
+border-radius: 10px;
+
+background: #c97845;
+color: white;
+
+font-family: 'Libre Baskerville', serif;
+font-size: 14px;
+font-weight: bold;
+
+cursor: pointer;
+transition: .3s;
+
+}
+
+.btn-gerar-pagamento:hover {
+background: #a85f35;
+transform: translateY(-1px);
+}
+
+/* ===============================
+PIX / BOLETO GERADO
+=============================== */
+
+.pix-gerado,
+.boleto-gerado {
+margin-top: 15px;
+padding: 22px 18px;
+
+background: #fffaf4;
+
+border: 1px solid #ead8c5;
+border-radius: 14px;
+
+text-align: center;
+
+box-shadow: 0 4px 12px rgba(139, 17, 17, 0.06);
+
+}
+
+/* TÍTULO */
+
+.pix-gerado h4,
+.boleto-gerado h4 {
+color: #8b1111;
+
+font-size: 17px;
+
+margin-bottom: 8px;
+
+}
+
+/* TEXTO */
+
+.pix-gerado p,
+.boleto-gerado p {
+color: #666;
+
+font-size: 11px;
+
+line-height: 1.6;
+
+margin-bottom: 12px;
+
+}
+
+/* ===============================
+QR CODE
+=============================== */
+
+.qr-code {
+width: 180px;
+height: 180px;
+
+display: block;
+
+margin: 18px auto;
+
+padding: 10px;
+
+background: white;
+
+border: 1px solid #ead8c5;
+border-radius: 10px;
+
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+}
+
+/* ===============================
+CHAVE PIX / CÓDIGO BOLETO
+=============================== */
+
+.chave-pix,
+.codigo-boleto {
+width: 100%;
+
+background: white;
+
+border: 1px solid #decfc0;
+border-radius: 8px;
+
+padding: 11px;
+
+margin: 12px 0;
+
+color: #5c2d20;
+
+font-family: Arial, sans-serif;
+font-size: 11px;
+
+line-height: 1.5;
+
+word-break: break-all;
+
+}
+
+/* ===============================
+BOTÃO COPIAR
+=============================== */
+
+.btn-copiar {
+border: none;
+
+background: #8b1111;
+color: white;
+
+padding: 10px 18px;
+
+border-radius: 9px;
+
+font-family: 'Libre Baskerville', serif;
+font-size: 12px;
+font-weight: bold;
+
+cursor: pointer;
+
+transition: .3s;
+
+}
+
+.btn-copiar:hover {
+background: #a85f35;
+transform: translateY(-1px);
+}
+
+/* ===============================
+AVISOS
+=============================== */
+
+.pix-aviso,
+.boleto-aviso {
+margin-top: 15px !important;
+
+font-size: 10px !important;
+
+line-height: 1.5 !important;
+
+color: #8b1111 !important;
+
+}

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleções - Lunary | Arte e Design</title>
+    <link rel="icon" href="../img/logo_lunary.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/colecoes.css">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="../img/logo.png" alt="Lunary">
+            </a>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="O que você procura?">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="icons">
+
+            <a href="login.html" class="usuario" id="linkUsuario">
+                <i class="fa-regular fa-user"></i>
+                <span id="nomeUsuario"></span>
+            </a>
+
+            <a href="carrinho.html" class="icone-carrinho">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="contadorCarrinho">0</span>
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- MENU -->
+
+    <nav>
+
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="artesanato.html">Artesanato</a>
+        <a href="contato.html">Contato</a>
+        <a href="promocoes.html">Promoções</a>
+
+    </nav>
+
+    <!-- BANNER -->
+
+    <section class="banner">
+
+        <img src="../img/bannercolecoes.png" alt="Banner Coleções">
+
+    </section>
+
+    <!-- COLEÇÕES -->
+
+    <section class="colecoes">
+
+        <h2>Nossas Coleções</h2>
+
+        <p class="subtitulo">
+            Inspire-se com coleções exclusivas desenvolvidas para diferentes estilos e momentos.
+        </p>
+
+        <div class="colecoes-container">
+
+            <div class="colecao-card">
+                <img src="../img/cozy.jpg" alt="Coleção Cozy">
+                <div class="texto">
+                    <h3>Coleção Cozy</h3>
+                    <p>Peças delicadas para deixar qualquer ambiente mais aconchegante.</p>
+                    <a href="#colecao-cozy">Explorar</a>
+                </div>
+            </div>
+
+            <div class="colecao-card">
+                <img src="../img/boho.jpg" alt="Coleção Boho">
+                <div class="texto">
+                    <h3>Coleção Boho</h3>
+                    <p>Fibras naturais, tons neutros e decoração artesanal.</p>
+                    <a href="#colecao-boho">Explorar</a>
+                </div>
+            </div>
+
+            <div class="colecao-card">
+                <img src="../img/velaaromatica.jpg" alt="Coleção Aromas">
+                <div class="texto">
+                    <h3>Coleção Aromas</h3>
+                    <p>Velas aromáticas, sabonetes e difusores artesanais.</p>
+                    <a href="#colecao-aromas">Explorar</a>
+                </div>
+            </div>
+
+            <div class="colecao-card">
+                <img src="../img/colecao_presentes.jpg" alt="Coleção Presentes">
+                <div class="texto">
+                    <h3>Coleção Presentes</h3>
+                    <p>Kits especiais para surpreender quem você ama.</p>
+                    <a href="#colecao-presentes">Explorar</a>
+                </div>
+            </div>
+
+            <div class="colecao-card">
+                <img src="../img/colecao_pinterest.jpg" alt="Coleção Pinterest">
+                <div class="texto">
+                    <h3>Coleção Pinterest</h3>
+                    <p>Os artesanatos mais aesthetic e inspirados nas tendências.</p>
+                    <a href="#colecao-pinterest">Explorar</a>
+                </div>
+            </div>
+
+            <div class="colecao-card">
+                <img src="../img/colecao_primavera.jpg" alt="Coleção Primavera">
+                <div class="texto">
+                    <h3>Coleção Primavera</h3>
+                    <p>Flores, cores suaves e peças feitas à mão para renovar sua decoração.</p>
+                    <a href="#colecao-primavera">Explorar</a>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUTOS DAS COLEÇÕES -->
+
+    <section class="colecoes-produtos">
+
+        <!-- COZY -->
+
+        <div class="colecao-produtos" id="colecao-cozy">
+
+            <div class="titulo-colecao">
+                <h2>Coleção Cozy</h2>
+                <p>
+                    Peças delicadas para deixar qualquer ambiente mais aconchegante.
+                </p>
+            </div>
+
+            <div class="produtos-container">
+
+                <div class="produto-colecao">
+                    <img src="../img/kitcozy.jpg" alt="Kit Cozy">
+
+                    <h3>Kit Cozy</h3>
+
+                    <p>Um conjunto perfeito para deixar seu espaço ainda mais aconchegante.</p>
+
+                    <span>R$ 149,90</span>
+
+                    <button onclick="adicionarCarrinho('Kit Cozy', 149.90, '../img/kitcozy.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/velaaromatica.jpg" alt="Vela Aromática">
+
+                    <h3>Vela Aromática</h3>
+
+                    <p>Perfume e aconchego para transformar o ambiente.</p>
+
+                    <span>R$ 76,90</span>
+
+                    <button onclick="adicionarCarrinho('Vela Aromática', 76.90, '../img/velaaromatica.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/cesta.jpg" alt="Cesta Boho">
+
+                    <h3>Cesta Boho</h3>
+
+                    <p>Uma peça artesanal para complementar sua decoração.</p>
+
+                    <span>R$ 74,90</span>
+
+                    <button onclick="adicionarCarrinho('Cesta Boho', 74.90, '../img/cesta.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOHO -->
+
+        <div class="colecao-produtos" id="colecao-boho">
+
+            <div class="titulo-colecao">
+                <h2>Coleção Boho</h2>
+                <p>
+                    Fibras naturais, tons neutros e muita personalidade.
+                </p>
+            </div>
+
+            <div class="produtos-container">
+
+                <div class="produto-colecao">
+                    <img src="../img/cesta2.jpg" alt="Cesta Boho">
+
+                    <h3>Cesta Boho</h3>
+
+                    <p>Uma peça artesanal cheia de charme.</p>
+
+                    <span>R$ 74,90</span>
+
+                    <button onclick="adicionarCarrinho('Cesta Boho', 74.90, '../img/cesta.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/bolsa2.jpg" alt="Bolsa de Crochê">
+
+                    <h3>Bolsa de Crochê</h3>
+
+                    <p>Artesanato e estilo em uma única peça.</p>
+
+                    <span>R$ 89,90</span>
+
+                    <button onclick="adicionarCarrinho('Bolsa de Crochê', 89.90, '../img/bolsa.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/vaso_decorativo.jpg" alt="Vaso Decorativo">
+
+                    <h3>Vaso Decorativo</h3>
+
+                    <p>Um toque artesanal para sua decoração.</p>
+
+                    <span>R$ 64,90</span>
+
+                    <button onclick="adicionarCarrinho('Vaso Decorativo', 64.90, '../img/vaso_decorativo.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- AROMAS -->
+
+        <div class="colecao-produtos" id="colecao-aromas">
+
+            <div class="titulo-colecao">
+                <h2>Coleção Aromas</h2>
+                <p>
+                    Aromas artesanais para criar momentos especiais.
+                </p>
+            </div>
+
+            <div class="produtos-container">
+
+                <div class="produto-colecao">
+                    <img src="../img/velaaromatica.jpg" alt="Vela Aromática">
+
+                    <h3>Vela Aromática</h3>
+
+                    <p>Um aroma especial para deixar o ambiente mais acolhedor.</p>
+
+                    <span>R$ 76,90</span>
+
+                    <button onclick="adicionarCarrinho('Vela Aromática', 76.90, '../img/velaaromatica.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/sabonete_artesanal.jpg" alt="Sabonete Artesanal">
+
+                    <h3>Sabonete Artesanal</h3>
+
+                    <p>Cuidado e delicadeza feitos à mão.</p>
+
+                    <span>R$ 29,90</span>
+
+                    <button onclick="adicionarCarrinho('Sabonete Artesanal', 29.90, '../img/sabonete_artesanal.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/portavelas.jpg" alt="Porta-Velas">
+
+                    <h3>Porta-Velas</h3>
+
+                    <p>Uma peça charmosa para acompanhar seus momentos.</p>
+
+                    <span>R$ 39,90</span>
+
+                    <button onclick="adicionarCarrinho('Porta-Velas', 39.90, '../img/portavelas.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRESENTES -->
+
+        <div class="colecao-produtos" id="colecao-presentes">
+
+            <div class="titulo-colecao">
+                <h2>Coleção Presentes</h2>
+                <p>
+                    Kits especiais para surpreender quem você ama.
+                </p>
+            </div>
+
+            <div class="produtos-container">
+
+                <div class="produto-colecao">
+                    <img src="../img/kit_presente.jpg" alt="Kit Presente">
+
+                    <h3>Kit Presente</h3>
+
+                    <p>Uma opção especial para presentear.</p>
+
+                    <span>R$ 119,90</span>
+
+                    <button onclick="adicionarCarrinho('Kit Presente', 119.90, '../img/kit_presente.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/kitcozy.jpg" alt="Kit Cozy">
+
+                    <h3>Kit Cozy</h3>
+
+                    <p>Um presente cheio de aconchego.</p>
+
+                    <span>R$ 149,90</span>
+
+                    <button onclick="adicionarCarrinho('Kit Cozy', 149.90, '../img/kitcozy.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/sabonete_artesanal.jpg" alt="Sabonete Artesanal">
+
+                    <h3>Sabonete Artesanal</h3>
+
+                    <p>Delicadeza em cada detalhe.</p>
+
+                    <span>R$ 29,90</span>
+
+                    <button onclick="adicionarCarrinho('Sabonete Artesanal', 29.90, '../img/sabonete_artesanal.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PINTEREST -->
+
+        <div class="colecao-produtos" id="colecao-pinterest">
+
+            <div class="titulo-colecao">
+                <h2>Coleção Pinterest</h2>
+                <p>
+                    Os artesanatos mais aesthetic e inspirados nas tendências.
+                </p>
+            </div>
+
+            <div class="produtos-container">
+
+                <div class="produto-colecao">
+                    <img src="../img/bolsa.jpg" alt="Bolsa de Crochê">
+
+                    <h3>Bolsa de Crochê</h3>
+
+                    <p>Estilo artesanal inspirado nas tendências.</p>
+
+                    <span>R$ 89,90</span>
+
+                    <button onclick="adicionarCarrinho('Bolsa de Crochê', 89.90, '../img/bolsa.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/vaso_decorativo.jpg" alt="Vaso Decorativo">
+
+                    <h3>Vaso Decorativo</h3>
+
+                    <p>Um detalhe especial para sua decoração.</p>
+
+                    <span>R$ 64,90</span>
+
+                    <button onclick="adicionarCarrinho('Vaso Decorativo', 64.90, '../img/vaso_decorativo.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/velaaromatica.jpg" alt="Vela Aromática">
+
+                    <h3>Vela Aromática</h3>
+
+                    <p>Conforto, aroma e estética em uma peça.</p>
+
+                    <span>R$ 76,90</span>
+
+                    <button onclick="adicionarCarrinho('Vela Aromática', 76.90, '../img/velaaromatica.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRIMAVERA -->
+
+        <div class="colecao-produtos" id="colecao-primavera">
+
+            <div class="titulo-colecao">
+                <h2>Coleção Primavera</h2>
+                <p>
+                    Flores, cores suaves e peças feitas à mão.
+                </p>
+            </div>
+
+            <div class="produtos-container">
+
+                <div class="produto-colecao">
+                    <img src="../img/vaso_decorativo.jpg" alt="Vaso Decorativo">
+
+                    <h3>Vaso Decorativo</h3>
+
+                    <p>Um toque de natureza para renovar seu espaço.</p>
+
+                    <span>R$ 64,90</span>
+
+                    <button onclick="adicionarCarrinho('Vaso Decorativo', 64.90, '../img/vaso_decorativo.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/velaaromatica.jpg" alt="Vela Aromática">
+
+                    <h3>Vela Aromática</h3>
+
+                    <p>Aromas delicados para trazer leveza ao ambiente.</p>
+
+                    <span>R$ 76,90</span>
+
+                    <button onclick="adicionarCarrinho('Vela Aromática', 76.90, '../img/velaaromatica.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <div class="produto-colecao">
+                    <img src="../img/sabonete_artesanal.jpg" alt="Sabonete Artesanal">
+
+                    <h3>Sabonete Artesanal</h3>
+
+                    <p>Delicadeza e cuidado feitos à mão.</p>
+
+                    <span>R$ 29,90</span>
+
+                    <button onclick="adicionarCarrinho('Sabonete Artesanal', 29.90, '../img/sabonete_artesanal.jpg')">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+
+    <button id="btnTopo" title="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-col">
+
+                <h3>LUNARY</h3>
+
+                <p>
+                    Artesanato feito com carinho para transformar ambientes
+                    e criar momentos especiais.
+                </p>
+
+            </div>
+
+            <div class="footer-col">
+
+                <h3>INSTITUCIONAL</h3>
+
+                <a href="index.html">Início</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="colecoes.html">Coleções</a>
+                <a href="contato.html">Contato</a>
+
+            </div>
+
+            <div class="footer-col">
+
+                <h3>ATENDIMENTO</h3>
+
+                <p>Segunda a Sexta</p>
+                <p>09:00 às 18:00</p>
+                <p>(41) 99999-9999</p>
+                <p>contato@lunary.com</p>
+
+            </div>
+
+            <div class="footer-col">
+
+                <h3>SIGA A LUNARY</h3>
+
+                <div class="social">
+
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- BOTÃO VOLTAR AO TOPO -->
+
+        <button id="btnTopo" title="Voltar ao topo">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+        <div class="footer-bottom">
+
+            © 2026 Lunary • Todos os direitos reservados.
+
+        </div>
+    </footer>
+
+    <!-- MENSAGEM DO CARRINHO -->
+
+    <div id="toast">
+        <i class="fa-solid fa-check"></i>
+        Produto adicionado ao carrinho!
+    </div>
+
+    <!-- TOAST -->
+
+    <div id="toast" class="toast">
+
+        <i class="fa-solid fa-check"></i>
+
+        <span id="textoToast">
+            Produto adicionado ao carrinho!
+        </span>
+
+    </div>
+
+    <script src="../js/carrinho.js"></script>
+    <script src="../js/pesquisa.js"></script>
+    <script src="../js/usuario.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Administrativo | Lunary</title>
+
+    <link rel="stylesheet" href="../css/login-admin.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="login-admin">
+
+        <a href="index.html" class="logo">
+            <img src="../img/logo_lunary.png" alt="Lunary">
+        </a>
+
+        <div class="icone-admin">
+            <i class="fa-solid fa-user-shield"></i>
+        </div>
+
+        <h1>Área Administrativa</h1>
+
+        <p class="subtitulo">
+            Entre para gerenciar a Lunary
+        </p>
+
+        <form action="../php/admin_login.php" method="POST">
+
+            <label for="email">E-mail</label>
+
+            <div class="campo">
+                <i class="fa-solid fa-envelope"></i>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+            </div>
+
+            <label for="senha">Senha</label>
+
+            <div class="campo">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Digite sua senha"
+                    required
+                >
+            </div>
+
+            <button type="submit">
+                Entrar
+            </button>
+
+        </form>
+
+        <a href="index.html" class="voltar">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar para a loja
+        </a>
+
+    </div>
+
+<script src="../js/usuario.js"></script>
+
+</body>
+
+</html>

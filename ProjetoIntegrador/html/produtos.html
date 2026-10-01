@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produtos | Lunary</title>
+
+    <link rel="stylesheet" href="../css/produtos.css">
+
+    <link rel="icon" href="../img/logo_lunary.png" type="image/x-icon">
+
+    <!-- Fonte -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Ícones -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <a href="index.html">
+                <img src="../img/logo.png" alt="Lunary">
+            </a>
+
+        </div>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="O que você procura?"
+                onkeyup="pesquisarProdutos()">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <div id="resultadoPesquisa" class="resultado-pesquisa"></div>
+
+        </div>
+
+        <div class="icons">
+
+            <a href="login.html" class="usuario" id="linkUsuario">
+
+                <i class="fa-regular fa-user"></i>
+
+                <span id="nomeUsuario"></span>
+
+            </a>
+
+            <a href="carrinho.html" class="icone-carrinho">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span id="contadorCarrinho">0</span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav>
+
+        <a href="index.html">Início</a>
+        <a href="artesanato.html">Artesanato</a>
+        <a href="colecoes.html">Coleções</a>
+        <a href="contato.html">Contato</a>
+        <a href="promocoes.html">Promoções</a>
+
+    </nav>
+
+
+    <!-- BANNER -->
+
+    <section class="banner">
+
+        <img src="../img/bannerprodutos.png" alt="Produtos">
+
+    </section>
+
+
+    <!-- TÍTULO -->
+
+    <section class="titulo-produtos">
+
+        <h2>Nossos Produtos</h2>
+
+        <p>
+            Peças artesanais feitas à mão, inspiradas no estilo boho, cozy e aesthetic.
+        </p>
+
+    </section>
+
+
+    <!-- PRODUTOS -->
+
+    <section class="produtos">
+
+        <div class="produtos-container" id="listaProdutos">
+
+            <!-- OS PRODUTOS SERÃO CARREGADOS PELO BANCO -->
+
+            <p>Carregando produtos...</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+
+    <button id="btnTopo" title="Voltar ao topo">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-col">
+
+                <h3>LUNARY</h3>
+
+                <p>
+                    Artesanato feito com carinho para transformar ambientes
+                    e criar momentos especiais.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>INSTITUCIONAL</h3>
+
+                <a href="index.html">Início</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="colecoes.html">Coleções</a>
+                <a href="contato.html">Contato</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>ATENDIMENTO</h3>
+
+                <p>Segunda a Sexta</p>
+                <p>09:00 às 18:00</p>
+                <p>(41) 99999-9999</p>
+                <p>contato@lunary.com</p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>SIGA A LUNARY</h3>
+
+                <div class="social">
+
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 Lunary • Todos os direitos reservados.
+
+        </div>
+
+    </footer>
+
+
+    <!-- MENSAGEM DO CARRINHO -->
+
+    <div id="toast">
+
+        <i class="fa-solid fa-check"></i>
+
+        Produto adicionado ao carrinho!
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/carrinho.js"></script>
+
+    <script src="../js/usuario.js"></script>
+
+    <script src="../js/pesquisa.js"></script>
+
+
+    <!-- CARREGAR PRODUTOS DO BANCO -->
+
+    <script>
+
+        async function carregarProdutos() {
+
+            const lista = document.getElementById("listaProdutos");
+
+            try {
+
+                const resposta = await fetch("../php/listar_produtos.php");
+
+                const resultado = await resposta.json();
+
+                console.log("Produtos recebidos:", resultado);
+
+                if (!resultado.sucesso) {
+
+                    lista.innerHTML = `
+                        <p>Não foi possível carregar os produtos.</p>
+                    `;
+
+                    return;
+                }
+
+                const produtos = resultado.produtos || [];
+
+                lista.innerHTML = "";
+
+                if (produtos.length === 0) {
+
+                    lista.innerHTML = `
+                        <p>Nenhum produto cadastrado.</p>
+                    `;
+
+                    return;
+                }
+
+
+                produtos.forEach(function(produto) {
+
+                    /*
+                        O banco deve guardar somente o caminho
+                        da imagem, por exemplo:
+
+                        ../img/cesta.jpg
+
+                        ou
+
+                        img/cesta.jpg
+                    */
+
+                    let imagem = produto.imagem;
+
+                    if (!imagem || imagem.trim() === "") {
+
+                        imagem = "../img/logo.png";
+
+                    }
+
+
+                    /*
+                        Se o banco tiver salvo apenas
+                        "cesta.jpg", adicionamos ../img/
+                    */
+
+                    if (
+                        !imagem.includes("/") &&
+                        !imagem.includes("\\")
+                    ) {
+
+                        imagem = "../img/" + imagem;
+
+                    }
+
+
+                    lista.innerHTML += `
+
+                        <div class="produto-card">
+
+                            <img
+                                src="${imagem}"
+                                alt="${produto.nome}"
+                                onerror="this.onerror=null; this.src='../img/logo.png';"
+                            >
+
+                            <h3>
+                                ${produto.nome}
+                            </h3>
+
+                            <div class="avaliacao">
+
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+
+                                <span>
+                                    Confira as avaliações
+                                </span>
+
+                            </div>
+
+                            <p>
+                                ${produto.descricao || "Produto artesanal da Lunary."}
+                            </p>
+
+                            <span>
+                                R$ ${Number(produto.preco)
+                                    .toFixed(2)
+                                    .replace(".", ",")}
+                            </span>
+
+                            <button
+                                onclick="adicionarCarrinho(
+                                    '${String(produto.nome).replace(/'/g, "\\'")}',
+                                    ${Number(produto.preco)},
+                                    '${imagem}'
+                                )">
+
+                                Adicionar ao Carrinho
+
+                            </button>
+
+                        </div>
+
+                    `;
+
+                });
+
+            }
+
+            catch (erro) {
+
+                console.error(
+                    "Erro ao carregar produtos:",
+                    erro
+                );
+
+                lista.innerHTML = `
+                    <p>
+                        Erro ao conectar com o servidor.
+                    </p>
+                `;
+
+            }
+
+        }
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                carregarProdutos();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

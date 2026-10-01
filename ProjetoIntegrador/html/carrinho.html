@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carrinho | Lunary</title>
+
+    <link rel="icon" href="../img/logo_lunary.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/carrinho.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="../img/logo.png" alt="Lunary">
+            </a>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="O que você procura?">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="icons">
+
+            <a href="login.html" class="usuario" id="linkUsuario">
+                <i class="fa-regular fa-user"></i>
+                <span id="nomeUsuario"></span>
+            </a>
+
+            <a href="carrinho.html" class="icone-carrinho">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="contadorCarrinho">0</span>
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- MENU -->
+
+    <nav>
+
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="artesanato.html">Artesanato</a>
+        <a href="colecoes.html">Coleções</a>
+        <a href="contato.html">Contato</a>
+        <a href="promocoes.html">Promoções</a>
+
+    </nav>
+
+    <!-- CARRINHO -->
+
+    <section class="carrinho">
+
+        <h2>Meu Carrinho</h2>
+
+        <div class="carrinho-container">
+
+            <!-- LISTA DE PRODUTOS -->
+
+            <div class="lista-produtos">
+
+                <div id="listaCarrinho">
+                    <!-- Os produtos serão adicionados pelo JavaScript -->
+                </div>
+
+            </div>
+
+            <!-- RESUMO DA COMPRA -->
+
+            <div class="resumo">
+
+                <h3>Resumo da Compra</h3>
+
+                <div class="linha">
+                    <span>Itens</span>
+                    <span id="quantidade">0</span>
+                </div>
+
+                <div class="linha">
+                    <span>Subtotal</span>
+                    <span id="subtotal">R$ 0,00</span>
+                </div>
+
+                <!-- CUPOM -->
+
+                <div class="area-cupom">
+
+                    <div class="titulo-cupom">
+
+                        <div class="icone-cupom">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+
+                        <div>
+                            <strong>Tem um cupom?</strong>
+                            <span>Digite seu código e aproveite seu desconto</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="cupom-input">
+
+                        <input type="text" id="campoCupom" placeholder="Digite seu código">
+
+                        <button type="button" onclick="aplicarCupom()">
+
+                            Aplicar
+
+                        </button>
+
+                    </div>
+
+
+                    <p id="mensagemCupom"></p>
+
+                </div>
+
+                <div class="linha">
+                    <span>Desconto</span>
+                    <span id="desconto">R$ 0,00</span>
+                </div>
+
+                <div class="linha">
+                    <span>Frete</span>
+                    <span id="frete">Grátis</span>
+                </div>
+
+                <div class="linha total">
+                    <span>Total</span>
+                    <span id="total">R$ 0,00</span>
+                </div>
+
+                <!-- FORMAS DE PAGAMENTO -->
+
+                <div class="pagamento">
+
+                    <h3>Forma de pagamento</h3>
+
+                    <div class="opcoes-pagamento">
+
+                        <label class="opcao-pagamento">
+
+                            <input type="radio" name="pagamento" value="pix" onchange="mostrarPagamento()">
+
+                            <div class="icone-pagamento pix">
+                                <i class="fa-brands fa-pix"></i>
+                            </div>
+
+                            <div class="info-pagamento">
+                                <strong>Pix</strong>
+                                <span>Pagamento instantâneo</span>
+                            </div>
+
+                            <i class="fa-solid fa-check check-pagamento"></i>
+
+                        </label>
+
+
+                        <label class="opcao-pagamento">
+
+                            <input type="radio" name="pagamento" value="cartao" onchange="mostrarPagamento()">
+
+                            <div class="icone-pagamento cartao">
+                                <i class="fa-solid fa-credit-card"></i>
+                            </div>
+
+                            <div class="info-pagamento">
+                                <strong>Cartão de crédito</strong>
+                                <span>Até 4x sem juros</span>
+                            </div>
+
+                            <i class="fa-solid fa-check check-pagamento"></i>
+
+                        </label>
+
+
+                        <label class="opcao-pagamento">
+
+                            <input type="radio" name="pagamento" value="boleto" onchange="mostrarPagamento()">
+
+                            <div class="icone-pagamento boleto">
+                                <i class="fa-solid fa-barcode"></i>
+                            </div>
+
+                            <div class="info-pagamento">
+                                <strong>Boleto bancário</strong>
+                                <span>Vencimento em 3 dias úteis</span>
+                            </div>
+
+                            <i class="fa-solid fa-check check-pagamento"></i>
+
+                        </label>
+
+                    </div>
+
+                    <div id="pagamentoPix" class="pagamento-extra"></div>
+
+                    <div id="pagamentoBoleto" class="pagamento-extra"></div>
+
+                </div>
+
+
+                <!-- DADOS DO CARTÃO -->
+
+                <div id="dadosCartao" class="dados-cartao">
+
+                    <div class="titulo-cartao">
+                        <i class="fa-solid fa-lock"></i>
+
+                        <div>
+                            <strong>Dados do cartão</strong>
+                            <span>Seus dados estão protegidos</span>
+                        </div>
+                    </div>
+
+                    <input type="text" id="numeroCartao" placeholder="Número do cartão" maxlength="19">
+
+                    <input type="text" id="nomeCartao" placeholder="Nome impresso no cartão">
+
+                    <div class="cartao-linha">
+
+                        <input type="text" id="validadeCartao" placeholder="Validade: MM/AA" maxlength="5">
+
+                        <input type="text" id="cvvCartao" placeholder="CVV" maxlength="4">
+
+                    </div>
+
+                </div>
+
+                <!-- RESULTADO DO PAGAMENTO -->
+
+                <div id="resultadoPagamento" class="resultado-pagamento">
+                </div>
+
+                <!-- FINALIZAR -->
+
+                <button class="btn-finalizar" onclick="finalizarCompra()">
+
+                    Finalizar Compra
+
+                </button>
+
+                <a href="produtos.html" class="continuar">
+                    ← Continuar Comprando
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MENSAGEM -->
+
+    <div id="toast" class="toast">
+
+        <i class="fa-solid fa-check"></i>
+
+        <span id="textoToast">
+            Produto adicionado ao carrinho!
+        </span>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/carrinho.js"></script>
+    <script src="../js/pesquisa.js"></script>
+    <script src="../js/usuario.js"></script>
+
+    <script>
+
+        mostrarCarrinho();
+        atualizarContador();
+
+    </script>
+
+</body>
+
+</html>

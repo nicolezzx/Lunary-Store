@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Compra Finalizada | Lunary</title>
+
+    <link rel="icon" href="../img/logo_lunary.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/compra-finalizada.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <a href="index.html">
+
+                <img src="../img/logo.png" alt="Lunary">
+
+            </a>
+
+        </div>
+
+        <div class="icons">
+
+            <a href="login.html" class="usuario" id="linkUsuario">
+
+                <i class="fa-regular fa-user"></i>
+
+                <span id="nomeUsuario"></span>
+
+            </a>
+
+            <a href="carrinho.html" class="icone-carrinho">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span id="contadorCarrinho">0</span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="compra-finalizada">
+        <div class="finalizada-box">
+
+            <div class="icone-sucesso">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h1>
+                Compra finalizada!
+            </h1>
+
+            <p>
+                Obrigado por comprar na Lunary! ♡
+            </p>
+
+            <p>
+                Seu pedido foi registrado com sucesso.
+            </p>
+
+            <a href="produtos.html" class="btn-finalizar">
+                Continuar Comprando
+            </a>
+
+        </div>
+    </main>
+
+
+    <script src="../js/usuario.js"></script>
+
+    <script>
+
+        // Mostra a chave Pix caso a compra
+        // tenha sido feita por Pix
+
+        const chavePix =
+            sessionStorage.getItem("chavePix");
+
+        const pixFinal =
+            document.getElementById("pixFinal");
+
+        if (chavePix && pixFinal) {
+
+            pixFinal.innerHTML = `
+
+                <h3>
+                    Pagamento via Pix
+                </h3>
+
+                <p>
+                    Utilize a chave Pix abaixo:
+                </p>
+
+                <div class="chave-pix-final">
+                    ${chavePix}
+                </div>
+
+                <button
+                    onclick="copiarChavePix()">
+
+                    Copiar chave Pix
+
+                </button>
+
+            `;
+
+        }
+
+
+        function copiarChavePix() {
+
+            navigator.clipboard.writeText(
+                chavePix
+            );
+
+            alert("Chave Pix copiada!");
+
+        }
+
+
+        // Depois que a página foi aberta,
+        // a chave não precisa mais ficar salva.
+
+        sessionStorage.removeItem("chavePix");
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel Administrativo | Lunary</title>
+
+    <link rel="icon" href="../img/logo_lunary.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="../img/logo.png" alt="Lunary">
+            <span>ADMIN</span>
+        </div>
+
+        <nav class="menu-admin">
+
+            <a href="#dashboard" class="ativo" onclick="mostrarSecao('dashboard', this)">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="#produtos" onclick="mostrarSecao('produtos', this)">
+                <i class="fa-solid fa-box"></i>
+                Produtos
+            </a>
+
+            <a href="#usuarios" onclick="mostrarSecao('usuarios', this)">
+                <i class="fa-solid fa-users"></i>
+                Usuários
+            </a>
+
+            <a href="#pedidos" onclick="mostrarSecao('pedidos', this)">
+                <i class="fa-solid fa-bag-shopping"></i>
+                Pedidos
+            </a>
+
+            <a href="#avaliacoes" onclick="mostrarSecao('avaliacoes', this)">
+                <i class="fa-solid fa-star"></i>
+                Avaliações
+            </a>
+
+            <a href="#cupons" onclick="mostrarSecao('cupons', this)">
+                <i class="fa-solid fa-ticket"></i>
+                Cupons
+            </a>
+
+            <a href="#mensagens" onclick="mostrarSecao('mensagens', this)">
+                <i class="fa-solid fa-envelope"></i>
+                Mensagens
+            </a>
+
+        </nav>
+
+        <div class="menu-final">
+
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Voltar para a loja
+            </a>
+
+            <a href="login-admin.html" class="sair">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sair
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="conteudo">
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="secao-admin">
+
+            <header class="topo">
+
+                <div>
+                    <p class="pequeno">PAINEL ADMINISTRATIVO</p>
+
+                    <h1>Olá, Administrador! 👋</h1>
+
+                    <p class="descricao">
+                        Aqui está um resumo da sua loja hoje.
+                    </p>
+                </div>
+
+                <div class="perfil-admin">
+
+                    <div class="icone-perfil">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div>
+                        <strong>Administrador</strong>
+                        <span>Conta administrativa</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CARDS -->
+
+            <section class="cards">
+
+                <div class="card">
+
+                    <div class="card-icone">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+                    <div>
+                        <p>Produtos</p>
+                        <h2 id="totalProdutos">0</h2>
+                        <span>Produtos cadastrados</span>
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icone">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <p>Usuários</p>
+                        <h2 id="totalUsuarios">0</h2>
+                        <span>Clientes cadastrados</span>
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icone">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+
+                    <div>
+                        <p>Pedidos</p>
+                        <h2 id="totalPedidos">0</h2>
+                        <span>Pedidos realizados</span>
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icone">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div>
+                        <p>Avaliações</p>
+                        <h2 id="totalAvaliacoes">0</h2>
+                        <span>Avaliações recebidas</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PAINÉIS -->
+
+            <section class="painel-grid">
+
+                <div class="painel">
+
+                    <div class="painel-titulo">
+
+                        <div>
+                            <h2>Pedidos recentes</h2>
+                            <p>Últimas compras realizadas</p>
+                        </div>
+
+                        <a href="#pedidos"
+                           onclick="mostrarSecao('pedidos', document.querySelector('.menu-admin a:nth-child(4)'))">
+                            Ver todos
+                        </a>
+
+                    </div>
+
+                    <div class="tabela">
+
+                        <div class="tabela-cabecalho">
+                            <span>Pedido</span>
+                            <span>Cliente</span>
+                            <span>Valor</span>
+                            <span>Status</span>
+                        </div>
+
+                        <div id="listaPedidos">
+
+                            <div class="pedido">
+                                <span>Nenhum pedido ainda</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="painel">
+
+                    <div class="painel-titulo">
+
+                        <div>
+                            <h2>Produtos em destaque</h2>
+                            <p>Produtos cadastrados</p>
+                        </div>
+
+                        <a href="#produtos"
+                           onclick="mostrarSecao('produtos', document.querySelector('.menu-admin a:nth-child(2)'))">
+                            Gerenciar
+                        </a>
+
+                    </div>
+
+                    <div id="produtosDestaque"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ATALHOS -->
+
+            <section class="atalhos">
+
+                <h2>Acesso rápido</h2>
+
+                <div class="atalhos-container">
+
+                    <a href="#produtos"
+                       class="atalho"
+                       onclick="mostrarSecao('produtos', document.querySelector('.menu-admin a:nth-child(2)'))">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        <div>
+                            <strong>Adicionar produto</strong>
+                            <span>Cadastrar um novo produto</span>
+                        </div>
+
+                    </a>
+
+
+                    <a href="#cupons"
+                       class="atalho"
+                       onclick="mostrarSecao('cupons', document.querySelector('.menu-admin a:nth-child(6)'))">
+
+                        <i class="fa-solid fa-ticket"></i>
+
+                        <div>
+                            <strong>Criar cupom</strong>
+                            <span>Criar uma nova promoção</span>
+                        </div>
+
+                    </a>
+
+
+                    <a href="#mensagens"
+                       class="atalho"
+                       onclick="mostrarSecao('mensagens', document.querySelector('.menu-admin a:nth-child(7)'))">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <div>
+                            <strong>Ver mensagens</strong>
+                            <span>Consultar mensagens dos clientes</span>
+                        </div>
+
+                    </a>
+
+
+                    <a href="#avaliacoes"
+                       class="atalho"
+                       onclick="mostrarSecao('avaliacoes', document.querySelector('.menu-admin a:nth-child(5)'))">
+
+                        <i class="fa-solid fa-star"></i>
+
+                        <div>
+                            <strong>Avaliações</strong>
+                            <span>Ver avaliações dos produtos</span>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- PRODUTOS -->
+
+        <section id="produtos" class="secao-admin secao-extra">
+
+            <div class="topo-secao">
+
+                <div>
+                    <p class="pequeno">GERENCIAMENTO</p>
+
+                    <h1>Produtos</h1>
+
+                    <p class="descricao">
+                        Adicione, edite ou exclua os produtos da sua loja.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-adicionar"
+                    onclick="abrirFormularioProduto()">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Adicionar produto
+
+                </button>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+
+            <div id="formularioProduto" class="form-produto">
+
+                <h2 id="tituloFormularioProduto">
+                    Novo produto
+                </h2>
+
+                <input type="hidden" id="idProduto">
+
+                <input
+                    type="text"
+                    id="nomeProduto"
+                    placeholder="Nome do produto">
+
+                <input
+                    type="number"
+                    id="precoProduto"
+                    placeholder="Preço"
+                    step="0.01"
+                    min="0">
+
+                <input
+                    type="text"
+                    id="categoriaProduto"
+                    placeholder="Categoria">
+
+                <input
+                    type="number"
+                    id="estoqueProduto"
+                    placeholder="Estoque"
+                    min="0">
+
+                <input
+                    type="text"
+                    id="imagemProduto"
+                    placeholder="Caminho da imagem">
+
+                <textarea
+                    id="descricaoProduto"
+                    placeholder="Descrição do produto"></textarea>
+
+                <div class="botoes-form">
+
+                    <button
+                        type="button"
+                        class="btn-salvar"
+                        onclick="salvarProduto()">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Salvar produto
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-cancelar"
+                        onclick="fecharFormularioProduto()">
+
+                        Cancelar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LISTA -->
+
+            <div class="lista-produtos-admin">
+
+                <div id="listaProdutos"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- USUÁRIOS -->
+
+        <section id="usuarios" class="secao-admin secao-extra">
+
+            <div class="topo-secao">
+
+                <div>
+                    <p class="pequeno">CLIENTES</p>
+
+                    <h1>Usuários</h1>
+
+                    <p class="descricao">
+                        Usuários cadastrados na Lunary.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="painel">
+
+                <div id="listaUsuarios">
+                    <p>Nenhum usuário cadastrado.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PEDIDOS -->
+
+        <section id="pedidos" class="secao-admin secao-extra">
+
+            <div class="topo-secao">
+
+                <div>
+                    <p class="pequeno">VENDAS</p>
+
+                    <h1>Pedidos</h1>
+
+                    <p class="descricao">
+                        Consulte os pedidos realizados.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="painel">
+
+                <div id="todosPedidos">
+                    <p>Nenhum pedido realizado.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AVALIAÇÕES -->
+
+        <section id="avaliacoes" class="secao-admin secao-extra">
+
+            <div class="topo-secao">
+
+                <div>
+                    <p class="pequeno">CLIENTES</p>
+
+                    <h1>Avaliações</h1>
+
+                    <p class="descricao">
+                        Avaliações recebidas nos produtos.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="painel">
+
+                <div id="listaAvaliacoes">
+                    <p>Nenhuma avaliação encontrada.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CUPONS -->
+
+        <section id="cupons" class="secao-admin secao-extra">
+
+            <div class="topo-secao">
+
+                <div>
+                    <p class="pequeno">PROMOÇÕES</p>
+
+                    <h1>Cupons</h1>
+
+                    <p class="descricao">
+                        Gerencie os cupons de desconto.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="painel">
+
+                <div id="listaCupons">
+                    <p>Cupons disponíveis.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MENSAGENS -->
+
+        <section id="mensagens" class="secao-admin secao-extra">
+
+            <div class="topo-secao">
+
+                <div>
+                    <p class="pequeno">CONTATO</p>
+
+                    <h1>Mensagens</h1>
+
+                    <p class="descricao">
+                        Mensagens enviadas pelos clientes.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="painel">
+
+                <div id="listaMensagens">
+                    <p>Nenhuma mensagem encontrada.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/admin.js"></script>
+
+</body>
+
+</html>

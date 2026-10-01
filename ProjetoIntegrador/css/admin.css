@@ -1,0 +1,1754 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    background: #fff8ee;
+    color: #351b12;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: #fff2df;
+
+    border-right: 1px solid #e4c9a8;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px 15px;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 12px 30px;
+}
+
+.logo img {
+    width: 80px;
+}
+
+.logo span {
+    font-size: 11px;
+    color: #8b1111;
+    font-weight: bold;
+}
+
+
+/* MENU */
+
+.menu-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.menu-admin a,
+.menu-final a {
+    text-decoration: none;
+
+    color: #5c4035;
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 14px;
+
+    transition: .2s;
+}
+
+.menu-admin a:hover,
+.menu-final a:hover {
+    background: #f3ddc3;
+}
+
+.menu-admin a.ativo {
+    background: #8b1111;
+    color: white;
+}
+
+.menu-admin i,
+.menu-final i {
+    width: 20px;
+    text-align: center;
+}
+
+
+/* FINAL */
+
+.menu-final {
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.menu-final .sair {
+    color: #8b1111;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo {
+    margin-left: 250px;
+
+    padding: 40px;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.topo,
+.topo-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.pequeno {
+    font-size: 11px;
+
+    color: #a45b21;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 32px;
+
+    color: #8b1111;
+
+    margin-bottom: 8px;
+}
+
+.descricao {
+    color: #795f52;
+
+    font-size: 14px;
+}
+
+
+/* PERFIL */
+
+.perfil-admin {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.perfil-admin strong {
+    display: block;
+
+    font-size: 14px;
+}
+
+.perfil-admin span {
+    display: block;
+
+    font-size: 11px;
+
+    color: #8d7468;
+
+    margin-top: 4px;
+}
+
+.icone-perfil {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #8b1111;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+
+    border: 1px solid #ead8c5;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    box-shadow: 0 4px 15px rgba(70, 30, 10, .04);
+}
+
+.card-icone {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 12px;
+
+    background: #fff0dc;
+
+    color: #8b1111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+.card p {
+    font-size: 12px;
+
+    color: #80695c;
+
+    margin-bottom: 5px;
+}
+
+.card h2 {
+    color: #351b12;
+
+    font-size: 25px;
+
+    margin-bottom: 3px;
+}
+
+.card span {
+    font-size: 10px;
+
+    color: #9b8478;
+}
+
+
+/* =========================
+   PAINÉIS
+========================= */
+
+.painel-grid {
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.painel {
+    background: white;
+
+    border: 1px solid #ead8c5;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    box-shadow: 0 4px 15px rgba(70, 30, 10, .04);
+}
+
+.painel-titulo {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.painel-titulo h2 {
+    font-size: 18px;
+
+    color: #351b12;
+}
+
+.painel-titulo p {
+    font-size: 11px;
+
+    color: #92786b;
+
+    margin-top: 5px;
+}
+
+.painel-titulo a {
+    color: #8b1111;
+
+    font-size: 11px;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.tabela-cabecalho,
+.pedido {
+    display: grid;
+
+    grid-template-columns: 80px 1fr 100px 80px;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+.tabela-cabecalho {
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eee0d2;
+
+    font-size: 10px;
+
+    color: #92786b;
+}
+
+.pedido {
+    padding: 15px 0;
+
+    border-bottom: 1px solid #f2e7dc;
+
+    font-size: 11px;
+}
+
+.status {
+    padding: 5px 8px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    font-size: 9px;
+}
+
+.aprovado {
+    background: #e7f4e9;
+    color: #397344;
+}
+
+.pendente {
+    background: #fff1d9;
+    color: #99651d;
+}
+
+.enviado {
+    background: #e5eef8;
+    color: #426a91;
+}
+
+
+/* =========================
+   ATALHOS
+========================= */
+
+.atalhos h2 {
+    font-size: 19px;
+
+    margin-bottom: 18px;
+}
+
+.atalhos-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.atalho {
+    background: white;
+
+    border: 1px solid #ead8c5;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    text-decoration: none;
+
+    color: #351b12;
+
+    transition: .2s;
+}
+
+.atalho:hover {
+    transform: translateY(-2px);
+
+    border-color: #c89562;
+}
+
+.atalho>i {
+    color: #8b1111;
+
+    font-size: 19px;
+}
+
+.atalho strong,
+.atalho span {
+    display: block;
+}
+
+.atalho strong {
+    font-size: 12px;
+}
+
+.atalho span {
+    font-size: 9px;
+
+    color: #947d70;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.secao-extra {
+    display: none;
+}
+
+.topo-secao {
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   BOTÃO ADICIONAR
+========================= */
+
+.btn-adicionar {
+    border: none;
+
+    background: #8b1111;
+
+    color: white;
+
+    padding: 13px 18px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 12px;
+}
+
+.btn-adicionar:hover {
+    background: #6f0d0d;
+}
+
+
+/* =========================
+   FORMULÁRIO PRODUTO
+========================= */
+
+.form-produto {
+    background: white;
+
+    border: 1px solid #ead8c5;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+}
+
+.form-produto h2 {
+    color: #8b1111;
+
+    font-size: 19px;
+
+    margin-bottom: 20px;
+}
+
+.form-produto input,
+.form-produto textarea {
+    width: 100%;
+
+    border: 1px solid #decab6;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    margin-bottom: 12px;
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+.form-produto input:focus,
+.form-produto textarea:focus {
+    border-color: #8b1111;
+}
+
+.form-produto textarea {
+    height: 100px;
+
+    resize: vertical;
+}
+
+.botoes-form {
+    display: flex;
+
+    gap: 10px;
+}
+
+.btn-salvar,
+.btn-cancelar {
+    border: none;
+
+    padding: 11px 17px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 11px;
+}
+
+.btn-salvar {
+    background: #8b1111;
+
+    color: white;
+}
+
+.btn-cancelar {
+    background: #eee2d5;
+
+    color: #5d4539;
+}
+
+
+/* =========================
+   LISTA DE PRODUTOS
+========================= */
+
+.lista-produtos-admin {
+    background: white;
+
+    border: 1px solid #ead8c5;
+
+    border-radius: 16px;
+
+    padding: 25px;
+}
+
+.produto-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee4da;
+}
+
+.produto-item:last-child {
+    border-bottom: none;
+}
+
+.produto-item img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    background: #f7eadb;
+}
+
+.produto-info {
+    flex: 1;
+}
+
+.produto-info h3 {
+    font-size: 14px;
+
+    color: #351b12;
+
+    margin-bottom: 5px;
+}
+
+.produto-info p {
+    font-size: 10px;
+
+    color: #92776a;
+
+    margin-bottom: 4px;
+}
+
+.produto-preco {
+    font-weight: bold;
+
+    color: #8b1111;
+
+    font-size: 13px;
+}
+
+.acoes-produto {
+    display: flex;
+
+    gap: 7px;
+}
+
+.btn-editar,
+.btn-excluir {
+    border: none;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.btn-editar {
+    background: #fff0dc;
+
+    color: #9a5c1e;
+}
+
+.btn-excluir {
+    background: #fde8e8;
+
+    color: #a52222;
+}
+
+
+/* PRODUTO DESTAQUE */
+
+.produto-destaque {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eee4da;
+}
+
+.produto-destaque:last-child {
+    border-bottom: none;
+}
+
+.produto-destaque img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.produto-destaque div {
+    flex: 1;
+}
+
+.produto-destaque h3 {
+    font-size: 11px;
+}
+
+.produto-destaque p {
+    font-size: 9px;
+
+    color: #92776a;
+
+    margin-top: 4px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1100px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .atalhos-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .conteudo {
+        margin-left: 200px;
+
+        padding: 25px;
+    }
+
+    .painel-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        position: static;
+
+        width: 100%;
+        height: auto;
+    }
+
+    .conteudo {
+        margin-left: 0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .atalhos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .topo,
+    .topo-secao {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+}
+
+/* ============================================
+   USUÁRIOS - PAINEL ADMIN
+   ============================================ */
+
+.lista-usuarios {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+
+/* CARD DO USUÁRIO */
+
+.usuario-admin {
+    background: #fffaf4;
+    border: 1px solid #ead8c4;
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 4px 12px rgba(100, 50, 20, 0.06);
+    transition: 0.2s ease;
+}
+
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.usuario-admin:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(100, 50, 20, 0.10);
+}
+
+
+/* ÍCONE */
+
+.usuario-admin .icone-usuario {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+
+    border-radius: 50%;
+
+    background: #f4dfc5;
+    color: #8b1111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+
+/* INFORMAÇÕES */
+
+.usuario-admin .informacoes-usuario {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* NOME */
+
+.usuario-admin .nome-usuario {
+    margin: 0 0 6px;
+
+    font-family: "Libre Baskerville", serif;
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #3b2118;
+}
+
+
+/* EMAIL */
+
+.usuario-admin .email-usuario {
+    margin: 0 0 8px;
+
+    font-size: 14px;
+    color: #765f52;
+
+    word-break: break-word;
+}
+
+
+/* TIPO */
+
+.usuario-admin .tipo-usuario {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: #f3e5d5;
+    color: #8b1111;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: capitalize;
+}
+
+
+/* TÍTULO DA SEÇÃO */
+
+.titulo-usuarios {
+    margin-bottom: 8px;
+
+    font-family: "Libre Baskerville", serif;
+    color: #8b1111;
+}
+
+
+/* DESCRIÇÃO */
+
+.subtitulo-usuarios {
+    margin: 0;
+    color: #765f52;
+    font-size: 14px;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+    .lista-usuarios {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .usuario-admin {
+        padding: 18px;
+    }
+
+    .usuario-admin .nome-usuario {
+        font-size: 16px;
+    }
+
+}
+
+/* ============================================
+   PEDIDOS
+   ============================================ */
+
+#todosPedidos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* CARD DO PEDIDO */
+
+.pedido-admin {
+    background: #fffaf4;
+    border: 1px solid #ead8c4;
+    border-radius: 18px;
+    padding: 24px;
+
+    box-shadow: 0 4px 14px rgba(100, 50, 20, 0.06);
+}
+
+
+/* TOPO */
+
+.pedido-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ead8c4;
+}
+
+
+.pedido-identificacao {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.icone-pedido {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #f4dfc5;
+    color: #8b1111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+.pedido-identificacao h3 {
+    margin: 0 0 4px;
+
+    color: #3b2118;
+
+    font-family: "Libre Baskerville", serif;
+}
+
+
+.pedido-identificacao p {
+    margin: 0;
+
+    color: #806b5f;
+    font-size: 13px;
+}
+
+
+/* STATUS */
+
+.status-pedido {
+    border: none;
+    border-radius: 20px;
+
+    padding: 9px 14px;
+
+    font-weight: 600;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    background: #f3e5d5;
+    color: #8b1111;
+}
+
+
+.status-pendente {
+    background: #fff0c7;
+    color: #8a6200;
+}
+
+
+.status-em-processo {
+    background: #dcecff;
+    color: #245a8d;
+}
+
+
+.status-enviado {
+    background: #eadcff;
+    color: #68449b;
+}
+
+
+.status-entregue {
+    background: #dcefdc;
+    color: #32703a;
+}
+
+
+.status-cancelado {
+    background: #f8dada;
+    color: #9b2929;
+}
+
+
+/* CLIENTE */
+
+.pedido-cliente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 0;
+
+    color: #5d493e;
+}
+
+
+.pedido-cliente div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+
+.pedido-cliente i {
+    color: #8b1111;
+}
+
+
+.pedido-cliente span {
+    font-size: 14px;
+    color: #806b5f;
+}
+
+
+/* PRODUTOS */
+
+.pedido-produtos {
+    background: #ffffff;
+
+    border: 1px solid #eee0d1;
+    border-radius: 12px;
+
+    padding: 16px;
+}
+
+
+.pedido-produtos h4 {
+    margin: 0 0 12px;
+
+    color: #8b1111;
+
+    font-family: "Libre Baskerville", serif;
+}
+
+
+.item-do-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #f0e6dc;
+
+    font-size: 14px;
+}
+
+
+.item-do-pedido:last-child {
+    border-bottom: none;
+}
+
+
+.item-pedido-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.quantidade-item {
+    background: #f4dfc5;
+    color: #8b1111;
+
+    padding: 4px 8px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.item-do-pedido strong {
+    color: #3b2118;
+}
+
+
+/* RODAPÉ */
+
+.pedido-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 18px;
+}
+
+
+.pedido-rodape span {
+    color: #806b5f;
+    font-size: 14px;
+}
+
+
+.pedido-rodape strong {
+    color: #8b1111;
+
+    font-size: 20px;
+}
+
+
+/* ESTADOS */
+
+.pedido-vazio,
+.pedido-carregando {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #806b5f;
+}
+
+
+.pedido-vazio i,
+.pedido-carregando i {
+    font-size: 30px;
+    color: #c26e00;
+
+    margin-bottom: 12px;
+}
+
+
+.sem-itens {
+    color: #806b5f;
+    font-size: 14px;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+    .pedido-topo {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .pedido-cliente {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .pedido-rodape {
+        align-items: flex-start;
+        gap: 8px;
+        flex-direction: column;
+    }
+
+}
+
+/* ============================================
+   CUPONS
+============================================ */
+
+#listaCupons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* Card de cada cupom */
+.cupom-admin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: #fff;
+    border: 1px solid #e3d5ca;
+    border-radius: 14px;
+
+    padding: 20px 24px;
+
+    box-shadow: 0 4px 12px rgba(71, 57, 54, 0.08);
+
+    transition: transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+.cupom-admin:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(71, 57, 54, 0.12);
+}
+
+/* Área do código + desconto */
+.cupom-admin>div {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Código do cupom */
+.cupom-admin strong {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 130px;
+
+    padding: 10px 16px;
+
+    background: #fff2df;
+    border: 1px dashed #c97342;
+    border-radius: 8px;
+
+    color: #a42727;
+
+    font-family: "Libre Baskerville", serif;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* Texto do desconto */
+.cupom-admin p {
+    margin: 0;
+
+    color: #332724;
+    font-size: 15px;
+}
+
+/* Validade */
+.cupom-admin>span {
+    color: #6d5b55;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Mensagem quando não existem cupons */
+#listaCupons>p {
+    margin: 0;
+    padding: 30px;
+
+    text-align: center;
+
+    background: #fff;
+    border: 1px dashed #c97342;
+    border-radius: 14px;
+
+    color: #6d5b55;
+    font-size: 15px;
+}
+
+
+/* ============================================
+   RESPONSIVIDADE DOS CUPONS
+============================================ */
+
+@media (max-width: 700px) {
+
+    .cupom-admin {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cupom-admin>div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .cupom-admin>span {
+        white-space: normal;
+    }
+
+    .cupom-admin strong {
+        min-width: auto;
+    }
+}
+
+
+/* =========================================
+   LUNARY - AVALIAÇÕES DO PAINEL ADMIN
+========================================= */
+
+#listaAvaliacoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+/* Cartão da avaliação */
+.avaliacao-admin {
+    background: #ffffff;
+    border: 1px solid #f0dfe7;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 5px 18px rgba(110, 65, 85, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Efeito ao passar o mouse */
+.avaliacao-admin:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 24px rgba(110, 65, 85, 0.13);
+}
+
+/* Nome e produto */
+.avaliacao-admin>div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.avaliacao-admin strong {
+    color: #75465d;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.avaliacao-admin>div:first-child p {
+    color: #9b7b8b;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Estrelas */
+.estrelas-admin {
+    color: #e5a83e;
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+/* Comentário */
+.avaliacao-admin>p:last-child {
+    background: #fff7fa;
+    border-left: 3px solid #d9a4bb;
+    border-radius: 0 8px 8px 0;
+    padding: 13px 15px;
+    color: #66545e;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Mensagens de carregamento e lista vazia */
+#listaAvaliacoes>p {
+    color: #8b7180;
+    font-size: 15px;
+    padding: 20px 0;
+}
+
+/* Responsividade para tablets e celulares */
+@media (max-width: 768px) {
+    #listaAvaliacoes {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .avaliacao-admin {
+        padding: 20px;
+    }
+}  
+
+/* ============================================
+   MENSAGENS
+============================================ */
+
+#listaMensagens {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+
+/* CARD DA MENSAGEM */
+
+.mensagem-admin {
+    background: #ffffff;
+    border: 1px solid #ead8c5;
+    border-radius: 16px;
+    padding: 22px;
+
+    box-shadow: 0 4px 15px rgba(70, 30, 10, .05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    transition: .2s ease;
+}
+
+
+.mensagem-admin:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(70, 30, 10, .09);
+}
+
+
+/* ============================================
+   CABEÇALHO
+============================================ */
+
+.mensagem-cabecalho {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid #eee1d4;
+}
+
+
+.cliente-mensagem {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+/* AVATAR */
+
+.avatar-mensagem {
+    width: 46px;
+    height: 46px;
+
+    min-width: 46px;
+
+    border-radius: 50%;
+
+    background: #8b1111;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+/* NOME + EMAIL */
+
+.dados-mensagem {
+    min-width: 0;
+}
+
+
+.dados-mensagem h3 {
+    margin: 0 0 4px;
+
+    color: #351b12;
+
+    font-family: "Libre Baskerville", serif;
+
+    font-size: 15px;
+}
+
+
+.dados-mensagem span {
+    display: block;
+
+    color: #80695c;
+
+    font-size: 11px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* DATA */
+
+.data-mensagem {
+    color: #9b8478;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================
+   CONTEÚDO
+============================================ */
+
+.mensagem-conteudo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* ASSUNTO */
+
+.assunto-mensagem {
+    width: fit-content;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: #fff0dc;
+
+    color: #8b1111;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+
+/* TEXTO */
+
+.mensagem-conteudo p {
+    margin: 0;
+
+    padding: 14px 16px;
+
+    background: #fffaf4;
+
+    border-radius: 10px;
+
+    color: #5d493e;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ============================================
+   RODAPÉ
+============================================ */
+
+.mensagem-rodape {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-top: 2px;
+}
+
+
+/* STATUS */
+
+.status-mensagem {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+
+.mensagem-nova {
+    background: #f8dddd;
+
+    color: #8b1111;
+}
+
+
+.mensagem-respondida {
+    background: #e7f1e8;
+
+    color: #397344;
+}
+
+
+/* BOTÃO */
+
+.btn-mensagem {
+    border: none;
+
+    background: transparent;
+
+    color: #8b1111;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    padding: 5px 0;
+}
+
+
+.btn-mensagem:hover {
+    color: #6f0d0d;
+
+    text-decoration: underline;
+}
+
+
+/* ============================================
+   RESPONSIVIDADE
+============================================ */
+
+@media (max-width: 900px) {
+
+    #listaMensagens {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .mensagem-admin {
+        padding: 18px;
+    }
+
+
+    .mensagem-cabecalho {
+        flex-direction: column;
+    }
+
+
+    .data-mensagem {
+        margin-left: 58px;
+    }
+
+
+    .mensagem-rodape {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}

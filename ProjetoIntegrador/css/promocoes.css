@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Libre Baskerville', serif;
+}
+
+body {
+    background: #fff2df;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 20px 5%;
+    background: #fff2df;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 110px;
+}
+
+.search-box {
+    width: 45%;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 45px 14px 20px;
+
+    border: 1px solid #c97845;
+    border-radius: 10px;
+}
+
+.search-box i {
+    position: absolute;
+    right: 18px;
+    top: 15px;
+    color: #8b1111;
+}
+
+.icons {
+    display: flex;
+    gap: 25px;
+}
+
+.icons a {
+    color: #8b1111;
+    font-size: 22px;
+}
+
+/* MENU */
+
+nav {
+    background: #c97845;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* BANNER */
+
+.banner img {
+    width: 100%;
+    display: block;
+}
+
+/* TÍTULO */
+
+.promocoes {
+
+    text-align: center;
+    padding: 70px 5% 30px;
+
+}
+
+.promocoes h2 {
+
+    color: #8b1111;
+    font-size: 42px;
+    margin-bottom: 20px;
+
+}
+
+.promocoes p {
+
+    color: #666;
+    font-size: 18px;
+
+}
+
+/* CUPONS */
+
+.cupons {
+
+    padding: 70px 5%;
+
+}
+
+.cupons h2 {
+
+    text-align: center;
+    color: #8b1111;
+    margin-bottom: 50px;
+
+}
+
+.cupons-container {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+}
+
+.cupom {
+
+    background: white;
+
+    border: 2px dashed #c97845;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    transition: .3s;
+
+}
+
+.cupom:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+
+}
+
+.cupom h3 {
+
+    color: #8b1111;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+
+}
+
+.cupom p {
+
+    color: #666;
+
+    margin-bottom: 25px;
+
+}
+
+.cupom button {
+
+    border: none;
+
+    background: #c97845;
+
+    color: white;
+
+    padding: 15px 30px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .3s;
+
+}
+
+.cupom button:hover {
+
+    background: #a85f35;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px) {
+
+    .cupons-container {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media(max-width:600px) {
+
+    header {
+
+        flex-direction: column;
+        gap: 20px;
+
+    }
+
+    .search-box {
+
+        width: 100%;
+
+    }
+
+    nav {
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+    }
+
+    .cupons-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* FOOTER */
+
+.footer {
+    background: #d9864f;
+    color: white;
+    padding: 70px 8% 30px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 40px;
+}
+
+.footer-col h3 {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.footer-col p,
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.footer-col a:hover {
+    color: #8b1111;
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social a {
+    width: 45px;
+    height: 45px;
+    background: white;
+    color: #8b1111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.social a:hover {
+    background: #8b1111;
+    color: white;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, .4);
+    text-align: center;
+    color: #fff2df;
+}
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+#btnTopo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #c26e00;
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+    z-index: 1000;
+
+    transition: 0.3s;
+}
+
+#btnTopo:hover {
+    transform: translateY(-3px);
+}
+
+.mensagem-cupom {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+
+    background-color: #8a0000;
+    color: white;
+
+    padding: 18px 25px;
+    border-radius: 10px;
+
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+
+    transition: 0.3s;
+    z-index: 9999;
+}
+
+.mensagem-cupom.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.btn-cupom.resgatado {
+    background-color: #8a0000;
+    cursor: default;
+    opacity: 0.8;
+}
+
+#btnTopo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #c26e00;
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+    z-index: 1000;
+
+    transition: 0.3s;
+}
+
+#btnTopo:hover {
+    transform: translateY(-3px);
+}
+
+.icone-carrinho {
+    position: relative;
+}
+
+.icone-carrinho #contadorCarrinho {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+
+    background: #8b1111;
+    color: white;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.usuario span {
+    font-size: 15px;
+    font-weight: bold;
+    color: #8b1111;
+}
