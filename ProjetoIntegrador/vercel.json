@@ -1,1 +1,24 @@
-
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/html/index.html"
+    },
+    {
+      "source": "/html/:path*",
+      "destination": "/html/:path*"
+    },
+    {
+      "source": "/css/:path*",
+      "destination": "/css/:path*"
+    },
+    {
+      "source": "/img/:path*",
+      "destination": "/img/:path*"
+    },
+    {
+      "source": "/js/:path*",
+      "destination": "/js/:path*"
+    }
+  ]
+}
